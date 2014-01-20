@@ -3,14 +3,50 @@ body {
 }
 
 table, td, th {
-    text-align: left;
-    border: 1px solid;
+    /*text-align: left;
+    border: 1px solid;*/
 }
 
 th {
-    background-color: darkgray;
+    /* background-color: darkgray; */
 }
 
 td {
-    background-color: lightgray;
+    /* background-color: lightgray;*/
+}
+
+/* http://www.finefinefine.jp/web/kiji1581/ */
+/* http://webmitikusa.blog47.fc2.com/blog-entry-41.html */
+.submenu {
+    position: absolute;
+    width: 188px;
+    none;
+    list-style-type: none;
+    top: 85px;
+    left: -30px;
+    z-index: 500;
+}
+
+.submenu li {
+    padding: 1px;
+    border: 1px solid #e1e1e1;
+    border-top: none;
+    background-color: #fff;
+}
+ 
+.submenu li a {
+    display: block;
+    padding: 12px 10px 12px 27px;
+    color: #2b6dd1;
+    font-size: 13px;
+    text-decoration: none;
+    background: url(../images/arrow.gif) 13px center no-repeat;
+}
+ 
+.submenu li a:hover {
+    background-color: #e8f2fa;
+}
+
+#menu li:hover .submenu {
+    left: 0;
 }

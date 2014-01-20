@@ -20,22 +20,13 @@
 <h1>AngularJS Search Filter</h1>
 
 <div ng-controller="SearchController">
-    <input type="text" ng-model="keyword" placeholder="Keyword"/>
-
-    <p>
-        検索ヒット数 : <span class="searchResultCount hit">{{(users | andSearchFilter:keyword).length}}</span>
-        件 / <span class="searchResultCount">{{users.length}}</span> 件中
-    </p>
-
-    <table class="data-table">
-        <tbody>
-        <tr ng-repeat="user in users | andSearchFilter:keyword">
-            <td>{{user.name}}</td>
-        </tr>
-        </tbody>
-    </table>
-    <p>株式会社シャノン Shanon,inc
-    </p>
+  <input type="text" ng-model="keyword" placeholder="Keyword"/>
+  <ul class="submenu">
+    <li ng-repeat="user in users | andSearchFilter:keyword">
+      {{user.name}}
+    </li>
+  </ul>
+  <p>© Shannon Lab 2014.</p>
 </div>
 
 </body>
