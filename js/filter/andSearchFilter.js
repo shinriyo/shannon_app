@@ -3,6 +3,9 @@ var ANDSearchFilter;
 ANDSearchFilter = function(searchService) {
   return function(list, searchQuery) {
     var filteredList, query, queryWordArray;
+    if (!searchQuery) {
+      return;
+    }
     if (searchQuery) {
       query = searchQuery.replace(/\　/g, " ");
     }

@@ -1,6 +1,10 @@
 ANDSearchFilter = (searchService) ->
   return (list, searchQuery) ->
 
+    # if null string
+    if !searchQuery
+      return
+
     if searchQuery
       # 全角スペースを半角スペースに置換
       query = searchQuery.replace(/\　/g, " ")
@@ -21,7 +25,7 @@ ANDSearchFilter = (searchService) ->
 
         # 検索キーワードがAND一致した場合、一覧に表示する配列に格納
         if isMatch
-            filteredList.push(obj)
+          filteredList.push(obj)
       )
       return filteredList
 
