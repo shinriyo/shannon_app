@@ -1,3 +1,3 @@
 SearchController = ($scope, searchService) ->
-  $scope.users = searchService.getData()
+  $scope.users = searchService.getData("hoge")
   $scope.search = ""

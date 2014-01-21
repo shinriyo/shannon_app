@@ -3,7 +3,8 @@ var SearchService;
 SearchService = function() {};
 
 SearchService.prototype.getData = function() {
-  return [
+  var options;
+  localStorage['opt'] = JSON.stringify([
     {
       id: 1,
       name: "ドトール"
@@ -15,15 +16,17 @@ SearchService.prototype.getData = function() {
       name: "ブロードウェイ"
     }, {
       id: 4,
-      name: "hoge"
+      name: "中野駅"
     }, {
       id: 5,
-      name: "bar"
+      name: "明治大学"
     }, {
       id: 6,
-      name: "fuga"
+      name: "帝京平成大学"
     }
-  ];
+  ]);
+  options = JSON.parse(localStorage['opt']);
+  return options;
 };
 
 SearchService.prototype.keywordJudge = function(obj, keyword) {
