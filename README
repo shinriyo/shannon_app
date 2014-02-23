@@ -3,4 +3,12 @@ ShanonLabの課題
 ===
 How to use
 ===
+# virtualenvで shanon の環境を作ってたら
+source shanon/bin/activate
+
 jitter coffee js --bare
+
+===
+元にした
+===
+http://yutarotanaka.com/blog/angularjs-custom-filter/
