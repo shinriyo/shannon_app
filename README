@@ -16,3 +16,11 @@ http://the-zombis.sakura.ne.jp/wp/?p=1347
 --
 
 README     coffee     css        index.html js         lib
+
+
+---
+Django
+---
+hg clone https://bitbucket.org/blaue_fuchs/csrf_sample
+pip install Django==1.4.2
+python dec/manage.py runserver 8080
