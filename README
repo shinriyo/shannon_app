@@ -4,3 +4,15 @@ ShanonLabの課題
 How to use
 ===
 jitter coffee js --bare
+
+
+local Strage memo
+---
+
+http://dev.screw-axis.com/doc/chrome_extensions/tips/localstorage/
+http://the-zombis.sakura.ne.jp/wp/?p=1347
+
+フォルダ構成
+--
+
+README     coffee     css        index.html js         lib
