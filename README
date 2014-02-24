@@ -3,6 +3,7 @@ ShanonLabの課題
 ===
 How to use
 ===
+cd coffee csrf_sample/tok/static/
 jitter coffee js --bare
 
 
