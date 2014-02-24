@@ -2,6 +2,7 @@
 from django.template import RequestContext, Context
 from django.shortcuts import render_to_response
 from django.views.decorators.csrf import csrf_protect
+from django.models import Dictionary
 
 
 def root(request):
@@ -12,6 +13,7 @@ def root(request):
 def search(request):
     if "keyword" in request.POST:
         keyword = request.POST["keyword"]
+	# TODO:
     else:
         keyword = ""
     ctxt = RequestContext(request, {
