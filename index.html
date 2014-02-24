@@ -19,6 +19,9 @@
 
 <h1>Shanon Search Engine</h1>
 
+<form method="POST" action="{% url search %}" name="SEARCH">
+{% csrf_token %}
+
 <div ng-controller="SearchController">
   <input type="text" ng-model="keyword" placeholder="Keyword"/>
   <ul class="submenu">
@@ -26,8 +29,12 @@
       {{user.name}}
     </li>
   </ul>
-  <p>© Shannon Lab 2014.</p>
 </div>
 
+<input type="submit" value="search" />
+</form>
+
 </body>
+<hr />
+<p>© Shannon Lab 2014.</p>
 </html>
