@@ -23,4 +23,4 @@ Django
 ---
 hg clone https://bitbucket.org/blaue_fuchs/csrf_sample
 pip install Django==1.4.2
-python dec/manage.py runserver 8080
+python csrf_sample/dec/manage.py runserver 8080

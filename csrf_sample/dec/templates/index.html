@@ -1,9 +1,9 @@
 <html>
-	<body>
-		<form method="POST" action="{% url search %}" name="SEARCH">
-			{% csrf_token %}
-			<input type="text" name="keyword" value="">
-			<input type="submit" value="search" />
-		</form>
-	</body>
+  <body>
+    <form method="POST" action="{% url search %}" name="SEARCH">
+      {% csrf_token %}
+      <input type="text" name="keyword" value="">
+      <input type="submit" value="search" />
+    </form>
+  </body>
 </html>
