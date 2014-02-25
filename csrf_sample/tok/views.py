@@ -2,8 +2,8 @@
 from django.template import RequestContext, Context
 from django.shortcuts import render_to_response
 from django.views.decorators.csrf import csrf_protect
-from django.db import models 
-#from django.models import Dictionary
+from django.db import models
+from tok.models import Dictionary
 
 
 def root(request):
@@ -14,8 +14,15 @@ def root(request):
 def search(request):
     if "keyword" in request.POST:
         keyword = request.POST["keyword"]
-	# TODO:
-	dictionary = models.Dictionary
+
+        # TODO:
+        dst = keyword.replace(u'　', ' ')
+        dictionary = Dictionary()
+        splited = dst.split(' ')
+        if len(splited) >= 2:
+            dictionary.key = splited[0]
+            dictionary.name = splited[1]
+            dictionary.save()
     else:
         keyword = ""
     ctxt = RequestContext(request, {
