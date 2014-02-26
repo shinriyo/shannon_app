@@ -57,6 +57,7 @@ def get_json(request):
         dic_dict = {}
         dic_dict['key'] = dictionary.key
         dic_dict['name'] = dictionary.name
+
         to_json.append(dic_dict)
 
     # convert the list to JSON
