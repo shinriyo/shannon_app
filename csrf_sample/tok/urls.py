@@ -20,4 +20,5 @@ urlpatterns += patterns(
     "views",
     url(r"^$", 'root', name='index'),
     url(r"^search/$", 'search', name='search'),
+    url(r"^get_json/$", 'get_json', name='get_json'),
 )

@@ -3,8 +3,7 @@ var SearchService;
 SearchService = function() {};
 
 SearchService.prototype.getData = function() {
-  var options;
-  localStorage['opt'] = JSON.stringify([
+  options = [
     {
       "key": "中野",
       "id": 1,
@@ -39,8 +38,11 @@ SearchService.prototype.getData = function() {
       "name": "チカラメシ"
     }
   ]);
-  options = JSON.parse(localStorage['opt']);
-  return options;
+
+  $.getJSON("/get_json", function(data) {
+    return data;
+  }
+  // return options;
 };
 
 SearchService.prototype.keywordJudge = function(obj, keyword) {

@@ -40,7 +40,10 @@ SearchService.prototype.getData = function() {
     }
   ]);
   options = JSON.parse(localStorage['opt']);
-  return options;
+  $.getJSON("http://localhost:8080/get_json", function(data) {
+    return data;
+  }
+  //return options;
 };
 
 SearchService.prototype.keywordJudge = function(obj, keyword) {
