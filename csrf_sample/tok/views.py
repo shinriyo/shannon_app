@@ -12,24 +12,30 @@ def root(request):
 
 
 def search(request):
+    message = ''
     if "keyword" in request.POST:
         keyword = request.POST["keyword"]
 
-        # TODO:
         dst = keyword.replace(u'　', ' ')
         dictionary = Dictionary()
         splited = dst.split(' ')
+
         if len(splited) >= 2:
-            key = splited.pop[0]
+            key = splited.pop(0)
+            tmp_msg = '' 
 	    for val in splited:
                 dictionary.key = key
                 dictionary.name = val
-
-            dictionary.save()
+                message += val + ', '
+                dictionary.save()
+        else:
+            message = "no key and message"
     else:
         keyword = ""
+        message = "input message"
     ctxt = RequestContext(request, {
-        "keyword": keyword
+        "keyword": keyword,
+        "message": message
     })
     return render_to_response("search.html", ctxt)
 
