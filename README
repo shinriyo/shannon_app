@@ -39,4 +39,8 @@ pip install south
 
 DBをmodelから作成
 
+# 最初
+python csrf_sample/tok/manage.py schemamigration tok --initial 
+# 次回
 python csrf_sample/tok/manage.py migrate
+
