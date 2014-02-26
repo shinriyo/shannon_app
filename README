@@ -9,14 +9,23 @@ source shanon/bin/activate
 jitter coffee js --bare
 
 ===
-元にした
+元にしたAngularJs
 ===
 http://yutarotanaka.com/blog/angularjs-custom-filter/
+
+jitter
 =======
 cd csrf_sample/tok/static/
 jitter coffee js --bare
 
 
+=======
+無料server
+=======
+
+http://freedjangohosting.com/
+
+---
 local Strage memo
 ---
 

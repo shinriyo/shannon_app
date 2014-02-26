@@ -20,7 +20,7 @@
         <input type="text" name="keyword" ng-model="keyword" placeholder="Keyword" autocomplete="off" />
         <ul class="submenu">
           <li ng-repeat="user in users | andSearchFilter:keyword">
-          {$ user.name $}
+          {$ user.key $} {$ user.name $}
           </li>
         </ul>
       </div>
