@@ -20,5 +20,6 @@ urlpatterns += patterns(
     "views",
     url(r"^$", 'root', name='index'),
     url(r"^search/$", 'search', name='search'),
-    url(r"^get_json/$", 'get_json', name='get_json'),
+    url(r"^get_json_js/$", 'get_json_js', name='get_json_js'),
+    url(r"^get_json/$", 'get_json', name='get_json'), # not using now
 )

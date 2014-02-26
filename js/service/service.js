@@ -39,11 +39,7 @@ SearchService.prototype.getData = function() {
     }
   ];
 
-  $.getJSON("http://localhost:8080/get_json", function(data) {
-    return data;
-  });
-
-  //return options;
+  return db_json;
 };
 
 SearchService.prototype.keywordJudge = function(obj, keyword) {

@@ -25,17 +25,17 @@ def search(request):
 
 	    for val in splited:
                 dictionary = Dictionary()
-		# http://iyukki.blog56.fc2.com/blog-entry-137.html
-                #dictionary.key = key
-                dictionary.key = unicode(key,'utf-8')
-                #dictionary.name = val
-                dictionary.name = unicode(val,'utf-8')
+                # http://iyukki.blog56.fc2.com/blog-entry-137.html,
+                # http://stackoverflow.com/questions/12684001/how-to-dump-a-py3k-httpresponse-into-json-load
+                dictionary.key = key
+                dictionary.name = val
                 check = Dictionary.objects.extra(
                     where=["key = '" + key + "'", "name = '" + val + "'"]
                 )
 		if not check: 
                     dictionary.save()
-                message += (val.encode('utf-8') + ', ')
+                #message += (val.encode('utf-8') + ', ')
+                message += (val + ', ')
         else:
             message = "no key and message"
     else:
@@ -44,7 +44,7 @@ def search(request):
     ctxt = RequestContext(request, {
         "keyword": keyword,
         "key": key, 
-        "message": message
+        "message": message,
     })
     return render_to_response("search.html", ctxt)
 
@@ -52,7 +52,8 @@ from django.http import HttpResponse
 from simplejson import dumps
 from django.core import serializers
 
-#http://stackoverflow.com/questions/9262278/django-view-returning-json-without-using-template
+# http://stackoverflow.com/questions/9262278/django-view-returning-json-without-using-template
+# it is not using
 def get_json(request):
     dictionaries = Dictionary.objects.all()
     to_json = []
@@ -69,6 +70,24 @@ def get_json(request):
     # http://bixly.com/blog/json-jquery-and-django/
     return HttpResponse(response_data, mimetype='application/json')
 
+def get_json_js(request):
+    dictionaries = Dictionary.objects.all()
+    to_json = []
+    for dictionary in dictionaries:
+        dic_dict = {}
+        dic_dict['key'] = dictionary.key
+        dic_dict['name'] = dictionary.name
+
+        to_json.append(dic_dict)
+
+    # convert the list to JSON
+    response_data = dumps(to_json,ensure_ascii=False)
+    response_data = response_data.encode('utf-8')
+    # http://bixly.com/blog/json-jquery-and-django/
+    response_data = "var db_json = " + response_data 
+    return HttpResponse(response_data, content_type="text/plain") 
+
+# it is not using
 def get_json2(request):
     foos = Dictionary.objects.all()
     data = serializers.serialize('json', foos)
