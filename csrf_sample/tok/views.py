@@ -17,13 +17,12 @@ def search(request):
         keyword = request.POST["keyword"]
 
         dst = keyword.replace(u'　', ' ')
-        dictionary = Dictionary()
         splited = dst.split(' ')
 
         if len(splited) >= 2:
             key = splited.pop(0)
-            tmp_msg = '' 
 	    for val in splited:
+                dictionary = Dictionary()
                 dictionary.key = key
                 dictionary.name = val
                 message += val + ', '
