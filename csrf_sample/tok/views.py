@@ -12,6 +12,7 @@ def root(request):
 
 
 def search(request):
+    key = ''
     message = ''
     if "keyword" in request.POST:
         keyword = request.POST["keyword"]
@@ -21,12 +22,17 @@ def search(request):
 
         if len(splited) >= 2:
             key = splited.pop(0)
+
 	    for val in splited:
                 dictionary = Dictionary()
                 dictionary.key = key
                 dictionary.name = val
-                message += val + ', '
-                dictionary.save()
+                check = Dictionary.objects.extra(
+                    where=["key = '" + key + "'", "name = '" + val + "'"]
+                )
+		if not check: 
+                    dictionary.save()
+                message += (val.encode('utf-8') + ', ')
         else:
             message = "no key and message"
     else:
@@ -34,6 +40,7 @@ def search(request):
         message = "input message"
     ctxt = RequestContext(request, {
         "keyword": keyword,
+        "key": key, 
         "message": message
     })
     return render_to_response("search.html", ctxt)
