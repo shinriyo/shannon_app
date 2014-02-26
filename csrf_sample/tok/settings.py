@@ -1,3 +1,4 @@
+import south
 # Django settings for csrf project.
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -127,6 +128,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'south',
 )
 
 # A sample logging configuration. The only tangible logging
