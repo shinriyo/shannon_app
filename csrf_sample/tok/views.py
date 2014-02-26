@@ -45,6 +45,30 @@ def search(request):
     })
     return render_to_response("search.html", ctxt)
 
+from django.http import HttpResponse
+from simplejson import dumps
+from django.core import serializers
+
+#http://stackoverflow.com/questions/9262278/django-view-returning-json-without-using-template
+def get_json(request):
+    dictionaries = Dictionary.objects.all()
+    to_json = []
+    for dictionary in dictionaries:
+        dic_dict = {}
+        dic_dict['key'] = dictionary.key
+        dic_dict['name'] = dictionary.name
+        to_json.append(dic_dict)
+
+    # convert the list to JSON
+    #response_data = simplejson.dumps(to_json)
+    response_data = dumps(to_json)
+    # http://bixly.com/blog/json-jquery-and-django/
+    return HttpResponse(response_data, mimetype='application/json')
+
+def get_json2(request):
+    foos = Dictionary.objects.all()
+    data = serializers.serialize('json', foos)
+    return HttpResponse(data, mimetype='application/json')
 
 @csrf_protect
 def search_dec(request):
