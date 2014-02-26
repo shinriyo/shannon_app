@@ -26,10 +26,10 @@ def search(request):
 	    for val in splited:
                 dictionary = Dictionary()
 		# http://iyukki.blog56.fc2.com/blog-entry-137.html
-                dictionary.key = key
-                #dictionary.key = unicode(key,'utf-8')
-                dictionary.name = val
-                #dictionary.name = unicode(val,'utf-8')
+                #dictionary.key = key
+                dictionary.key = unicode(key,'utf-8')
+                #dictionary.name = val
+                dictionary.name = unicode(val,'utf-8')
                 check = Dictionary.objects.extra(
                     where=["key = '" + key + "'", "name = '" + val + "'"]
                 )
@@ -64,9 +64,8 @@ def get_json(request):
         to_json.append(dic_dict)
 
     # convert the list to JSON
-    #response_data = simplejson.dumps(to_json)
-    #response_data = dumps(to_json)
     response_data = dumps(to_json,ensure_ascii=False)
+    response_data = response_data.encode('utf-8')
     # http://bixly.com/blog/json-jquery-and-django/
     return HttpResponse(response_data, mimetype='application/json')
 

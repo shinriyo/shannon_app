@@ -37,12 +37,12 @@ SearchService.prototype.getData = function() {
       "id": 8,
       "name": "チカラメシ"
     }
-  ]);
+  ];
 
-  $.getJSON("/get_json", function(data) {
+  /*$.getJSON("/get_json", function(data) {
     return data;
-  }
-  // return options;
+  });*/
+  return options;
 };
 
 SearchService.prototype.keywordJudge = function(obj, keyword) {

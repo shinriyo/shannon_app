@@ -3,8 +3,7 @@ var SearchService;
 SearchService = function() {};
 
 SearchService.prototype.getData = function() {
-  var options;
-  localStorage['opt'] = JSON.stringify([
+  var options = [
     {
       "key": "中野",
       "id": 1,
@@ -38,11 +37,12 @@ SearchService.prototype.getData = function() {
       "id": 8,
       "name": "チカラメシ"
     }
-  ]);
-  options = JSON.parse(localStorage['opt']);
+  ];
+
   $.getJSON("http://localhost:8080/get_json", function(data) {
     return data;
-  }
+  });
+
   //return options;
 };
 
