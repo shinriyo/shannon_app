@@ -20,8 +20,11 @@ def search(request):
         dictionary = Dictionary()
         splited = dst.split(' ')
         if len(splited) >= 2:
-            dictionary.key = splited[0]
-            dictionary.name = splited[1]
+            key = splited.pop[0]
+	    for val in splited:
+                dictionary.key = key
+                dictionary.name = val
+
             dictionary.save()
     else:
         keyword = ""
