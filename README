@@ -15,7 +15,7 @@ http://yutarotanaka.com/blog/angularjs-custom-filter/
 
 jitter
 =======
-cd csrf_sample/tok/static/
+cd shannon_search/tok/static/
 jitter coffee js --bare
 
 
@@ -36,23 +36,24 @@ http://the-zombis.sakura.ne.jp/wp/?p=1347
 --
 
 README     coffee     css        index.html js         lib
-
+shannon_search
 
 ---
 Django
 ---
-hg clone https://bitbucket.org/blaue_fuchs/csrf_sample
+hg clone https://bitbucket.org/blaue_fuchs/shannon_search
 pip install Django==1.4.2
 python csrf_sample/tok/manage.py runserver 8080
 pip install south
 pip install simplejson
 
 DBをmodelから作成
+---
 
 # 最初
 * 直下にdjango.dbがないとき
-python csrf_sample/tok/manage.py schemamigration tok --initial 
-python csrf_sample/tok/manage.py syncdb --all
+python shannon_search/tok/manage.py schemamigration tok --initial 
+python shannon_search/tok/manage.py syncdb --all
 # 次回
-python csrf_sample/tok/manage.py migrate
+python shannon_search/tok/manage.py migrate
 
