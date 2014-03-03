@@ -12,8 +12,7 @@ def root(request):
 
 
 def search(request):
-    key = ''
-    message = ''
+    key = message = ''
     if "keyword" in request.POST:
         keyword = request.POST["keyword"]
 
@@ -24,18 +23,18 @@ def search(request):
             key = splited.pop(0)
 
 	    for val in splited:
-                dictionary = Dictionary()
-                # http://iyukki.blog56.fc2.com/blog-entry-137.html,
-                # http://stackoverflow.com/questions/12684001/how-to-dump-a-py3k-httpresponse-into-json-load
-                dictionary.key = key
-                dictionary.name = val
-                check = Dictionary.objects.extra(
-                    where=["key = '" + key + "'", "name = '" + val + "'"]
-                )
-		if not check: 
-                    dictionary.save()
-                #message += (val.encode('utf-8') + ', ')
-                message += (val + ', ')
+            dictionary = Dictionary()
+            # http://iyukki.blog56.fc2.com/blog-entry-137.html,
+            # http://stackoverflow.com/questions/12684001/how-to-dump-a-py3k-httpresponse-into-json-load
+            dictionary.key = key
+            dictionary.name = val
+            check = Dictionary.objects.extra(
+                where=["key = '" + key + "'", "name = '" + val + "'"]
+            )
+		if not check:
+            dictionary.save()
+            #message += (val.encode('utf-8') + ', ')
+            message += (val + ', ')
         else:
             message = "no key and message"
     else:
@@ -43,7 +42,7 @@ def search(request):
         message = "input message"
     ctxt = RequestContext(request, {
         "keyword": keyword,
-        "key": key, 
+        "key": key,
         "message": message,
     })
     return render_to_response("search.html", ctxt)
@@ -84,8 +83,8 @@ def get_json_js(request):
     response_data = dumps(to_json,ensure_ascii=False)
     response_data = response_data.encode('utf-8')
     # http://bixly.com/blog/json-jquery-and-django/
-    response_data = "var db_json = " + response_data 
-    return HttpResponse(response_data, content_type="text/plain") 
+    response_data = "var db_json = " + response_data
+    return HttpResponse(response_data, content_type="text/plain")
 
 # it is not using
 def get_json2(request):
