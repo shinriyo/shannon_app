@@ -22,7 +22,7 @@ def search(request):
         if len(splited) >= 2:
             key = splited.pop(0)
 
-	    for val in splited:
+        for val in splited:
             dictionary = Dictionary()
             # http://iyukki.blog56.fc2.com/blog-entry-137.html,
             # http://stackoverflow.com/questions/12684001/how-to-dump-a-py3k-httpresponse-into-json-load
@@ -31,12 +31,12 @@ def search(request):
             check = Dictionary.objects.extra(
                 where=["key = '" + key + "'", "name = '" + val + "'"]
             )
-		if not check:
-            dictionary.save()
-            #message += (val.encode('utf-8') + ', ')
-            message += (val + ', ')
-        else:
-            message = "no key and message"
+            if not check:
+                dictionary.save()
+                #message += (val.encode('utf-8') + ', ')
+                message += (val + ', ')
+            else:
+                message = "no key and message"
     else:
         keyword = ""
         message = "input message"
