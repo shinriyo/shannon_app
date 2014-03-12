@@ -39,7 +39,8 @@ SearchService.prototype.getData = function() {
     }
   ];
 
-  return db_json;
+  //return db_json;
+  return options;
 };
 
 SearchService.prototype.keywordJudge = function(obj, keyword) {
