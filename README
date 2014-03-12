@@ -47,11 +47,18 @@ pip install Django==1.4.2
 起動
 ---
 python shannon_search/tok/manage.py runserver 8080
+
+インストール
+---
 pip install south
 pip install simplejson
 
 DBをmodelから作成
+
+JSONの仕組み
 ---
+index.htmlテンプレートにて
+<script type="text/javascript" src="/get_json_js"></script>
 
 # 最初
 * 直下にdjango.dbがないとき

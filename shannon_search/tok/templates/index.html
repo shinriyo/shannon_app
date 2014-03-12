@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script type="text/javascript" src="/get_json_js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}lib/jquery-2.1.0.min.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}lib/angularjs/angular.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/service/service.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/filter/andSearchFilter.js"></script>
@@ -17,14 +17,14 @@
     <form method="POST" action="{% url search %}" name="SEARCH">
       {% csrf_token %}
       <div ng-controller="SearchController">
-        <input type="text" name="keyword" ng-model="keyword" placeholder="Keyword" autocomplete="off" />
+        <input id="inputbox" type="text" name="keyword" ng-model="keyword" placeholder="Keyword" autocomplete="off" />
         <ul class="submenu">
           <li ng-repeat="user in users | andSearchFilter:keyword">
-          {$ user.key $} {$ user.name $}
+	  <a href onclick="go(this)">{$ user.key $} {$ user.name $}</a>
           </li>
         </ul>
+      	<input type="submit" value="search" />
       </div>
-      <input type="submit" value="search" />
     </form>
   </body>
   <hr />
