@@ -1,9 +1,16 @@
-function enableSuggestion() {
-    document.getElementById("suggestion").style.display = "block";
-}
+var disableSuggestion, enableSuggestion, go;
 
-function disableSuggestion() {
-    document.getElementById("suggestion").style.display = "none";
-}
+go = function(obj) {
+  return alert(obj.innerText);
+};
+
+enableSuggestion = function() {
+  return document.getElementById('suggestion').style.display = "block";
+};
+
+disableSuggestion = function(obj) {
+  alert(obj);
+  return document.getElementById('suggestion').style.display = "none";
+};
 
 angular.module("SearchApp", []).service("searchService", SearchService).filter("andSearchFilter", ANDSearchFilter).controller("searchController", SearchController);

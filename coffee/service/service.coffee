@@ -1,7 +1,43 @@
 SearchService = ()->
 
 SearchService.prototype.getData = ()->
-  return db_json  
+    options = [
+        {
+          "key": "中野",
+          "id": 1,
+          "name": "ドトール"
+        }, {
+          "key": "中野",
+          "id": 2,
+          "name": "サンロード"
+        }, {
+          "key": "中野",
+          "id": 3,
+          "name": "ブロードウェイ"
+        }, {
+          "key": "中野",
+          "id": 4,
+          "name": "中野駅"
+        }, {
+          "key": "中野",
+          "id": 5,
+          "name": "明治大学"
+        }, {
+          "key": "中野",
+          "id": 6,
+          "name": "帝京平成大学"
+        }, {
+          "key": "荻窪",
+          "id": 7,
+          "name": "ドトール"
+        }, {
+          "key": "荻窪",
+          "id": 8,
+          "name": "チカラメシ"
+        }
+    ]
+  return options 
+  #return db_json  
 
 SearchService.prototype.keywordJudge = (obj, keyword)->
   # obj is json

@@ -17,10 +17,10 @@
     <form method="POST" action="{% url search %}" name="SEARCH">
       {% csrf_token %}
       <div ng-controller="SearchController">
-        <input id="inputbox" type="text" name="keyword" ng-model="keyword" placeholder="Keyword" autocomplete="off" />
+        <input id="inputbox" onfocus="enableSuggestion()" onblur="disableSuggestion()" type="text" name="keyword" ng-model="keyword" placeholder="Keyword" autocomplete="off" />
         <ul class="submenu">
           <li ng-repeat="user in users | andSearchFilter:keyword">
-            <a href onclick="go(this)">{$ user.key $} {$ user.name $}</a>
+            <a href onmouseover="go(this)">{$ user.key $} {$ user.name $}</a>
           </li>
         </ul>
       	<input type="submit" value="search" />

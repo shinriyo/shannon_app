@@ -17,8 +17,7 @@
     <h1>Shanon Search Engine</h1>
     <form method="POST" action="{% url search %}" name="SEARCH">
       <div ng-controller="SearchController">
-        <input id="inputbox" type="text" onfocus="enableSuggestion()"
-        onblur="disableSuggestion()" ng-model="keyword" placeholder="Keyword"/>
+        <input id="inputbox" type="text" onfocus="enableSuggestion()" onblur="disableSuggestion()" ng-model="keyword" placeholder="Keyword"/>
         <ul id="suggestion" class="submenu">
           <li ng-repeat="user in users | andSearchFilter:keyword">
             <a href="">{{user.name}}</a>

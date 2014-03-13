@@ -3,7 +3,8 @@ var SearchService;
 SearchService = function() {};
 
 SearchService.prototype.getData = function() {
-  var options = [
+  var options;
+  return options = [
     {
       "key": "中野",
       "id": 1,
@@ -38,10 +39,9 @@ SearchService.prototype.getData = function() {
       "name": "チカラメシ"
     }
   ];
-
-  //return db_json;
-  return options;
 };
+
+return options;
 
 SearchService.prototype.keywordJudge = function(obj, keyword) {
   var properties, self;
