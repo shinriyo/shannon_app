@@ -1,4 +1,4 @@
-go(obj)->
+go = (obj)->
     $("#inputbox").value = obj.innerText;
 
 enableSuggestion = ()->
