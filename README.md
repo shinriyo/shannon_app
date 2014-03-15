@@ -4,8 +4,8 @@ ShanonLabの課題
 How to use
 ---
 
-# virtualenvで shanon の環境を作ってたら
-source shanon/bin/activate
+virtualenvで shanon の環境を作ってたら
+    source shanon/bin/activate
 
 元にしたAngularJs
 ---
@@ -15,13 +15,13 @@ http://yutarotanaka.com/blog/angularjs-custom-filter/
 jitter (CoffeeScriptをJSに自動変換)
 ---
 
-cd shannon_search/tok/static/
-jitter coffee js --bare
+    cd shannon_search/tok/static/
+    jitter coffee js --bare
 
 CoffeeScriptを使用しているので変換するコマンド
 ---
-cd shannon_search/tok/static
-jitter coffee js --bare
+    cd shannon_search/tok/static
+    jitter coffee js --bare
 
 
 無料server一覧
@@ -50,12 +50,12 @@ pip install Django==1.4.2
 
 起動
 ---
-python shannon_search/tok/manage.py runserver 8080
+    python shannon_search/tok/manage.py runserver 8080
 
 pipで必要なもののインストール
 ---
-pip install south
-pip install simplejson
+    pip install south
+    pip install simplejson
 
 JSONの仕組み
 ---
@@ -64,8 +64,11 @@ index.htmlテンプレートにて
 
 # 最初
 * 直下にdjango.dbがないとき
-python shannon_search/tok/manage.py schemamigration tok --initial 
-python shannon_search/tok/manage.py syncdb --all
+
+    python shannon_search/tok/manage.py schemamigration tok --initial 
+    python shannon_search/tok/manage.py syncdb --all
+
 # 次回
-python shannon_search/tok/manage.py migrate
+
+    python shannon_search/tok/manage.py migrate
 
