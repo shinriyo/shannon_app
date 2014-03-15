@@ -1,15 +1,14 @@
 var disableSuggestion, enableSuggestion, go;
 
 go = function(obj) {
-  return alert(obj.innerText);
+  return disableSuggestion();
 };
 
 enableSuggestion = function() {
   return document.getElementById('suggestion').style.display = "block";
 };
 
-disableSuggestion = function(obj) {
-  alert(obj);
+disableSuggestion = function() {
   return document.getElementById('suggestion').style.display = "none";
 };
 
