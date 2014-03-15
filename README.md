@@ -45,8 +45,8 @@ shannon_search
 Django
 ---
 
-hg clone https://bitbucket.org/blaue_fuchs/shannon_search
-pip install Django==1.4.2
+    hg clone https://bitbucket.org/blaue_fuchs/shannon_search
+    pip install Django==1.4.2
 
 起動
 ---
