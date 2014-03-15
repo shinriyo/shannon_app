@@ -42,7 +42,7 @@ README     coffee     css        index.html js         lib
 shannon_search
 
 
-Django
+Django (1.3でも動作確認済み)
 ---
 
     hg clone https://bitbucket.org/blaue_fuchs/shannon_search
