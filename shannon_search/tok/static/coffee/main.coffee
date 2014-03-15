@@ -1,11 +1,11 @@
 go = (obj)->
-    $("#inputbox").value = obj.innerText;
+    $("#inputbox")[0].value = obj.innerText;
 
 enableSuggestion = ()->
-    document.getElementById('suggestion').style.display = "block"
+    $("#suggestion")[0].style.display = "block"
 
 disableSuggestion = ()->
-    #document.getElementById('suggestion').style.display = "none"
+    $("#suggestion")[0].style.display = "none"
 
 angular.module("SearchApp", [])
     .service("searchService", SearchService)
