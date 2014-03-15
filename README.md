@@ -52,18 +52,18 @@ Django
 ---
     python shannon_search/tok/manage.py runserver 8080
 
-pipで必要なもののインストール
----
-    pip install south
-    pip install simplejson
-
 JSONの仕組み
 ---
 index.htmlテンプレートにて
 <script type="text/javascript" src="/get_json_js"></script>
 
-# 最初
-* 直下にdjango.dbがないとき
+まずインストールしてくこと (pipで必要なもののインストール)
+---
+    pip install south
+    pip install simplejson
+
+southでのDB初期化 (直下にdjango.dbがないときはsqlite3のDBが作成されてない)
+---
 
     python shannon_search/tok/manage.py schemamigration tok --initial 
     python shannon_search/tok/manage.py syncdb --all
