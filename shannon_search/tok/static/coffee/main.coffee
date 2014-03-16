@@ -1,5 +1,5 @@
 go = (obj)->
-    $("#inputbox")[0].value = obj.innerText;
+    $("#inputbox")[0].value = obj.innerText
 
 enableSuggestion = ()->
     $("#suggestion")[0].style.display = "block"

@@ -4,7 +4,8 @@ ShanonLabの課題
 How to use
 ---
 
-virtualenvで shanon の環境を作ってたら
+もし、virtualenvで"shanon"の環境を作ってた時
+
     source shanon/bin/activate
 
 元にしたAngularJs
@@ -24,23 +25,21 @@ CoffeeScriptを使用しているので変換するコマンド
     jitter coffee js --bare
 
 
-無料server一覧
+無料server一覧URL
 ---
 
 http://freedjangohosting.com/
 
-local Strage memolize
----
-
-http://dev.screw-axis.com/doc/chrome_extensions/tips/localstorage/
-http://the-zombis.sakura.ne.jp/wp/?p=1347
-
 フォルダ構成
 --
 
-README     coffee     css        index.html js         lib
-shannon_search
-
+* README.md 説明
+* coffee CoffeeScriptが格納(ローカルでの練習用index.html用)
+* css cssが格納(ローカルでの練習用index.html用)
+* index.html ローカルでの練習用index.html
+* js JSが格納(ローカルでの練習用index.html用)
+* lib JSのライブラリが格納(ローカルでの練習用index.html用)
+* shannon_search 本体のフォルダ(tokとdekがあるが、tokしか使用していません)
 
 Django (1.3でも動作確認済み)
 ---
