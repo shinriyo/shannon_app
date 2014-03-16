@@ -106,7 +106,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'tok.urls'
+ROOT_URLCONF = 'shannon_search.urls'
 
 
 from os.path import dirname
@@ -131,7 +131,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'south',
-    'tok',
+    'shannon_search',
 )
 
 # A sample logging configuration. The only tangible logging

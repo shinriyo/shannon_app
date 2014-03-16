@@ -16,19 +16,8 @@ http://yutarotanaka.com/blog/angularjs-custom-filter/
 jitter (CoffeeScriptをJSに自動変換)
 ---
 
-    cd shannon_search/tok/static/
+    cd shannon_study/shannon_search/static/
     jitter coffee js --bare
-
-CoffeeScriptを使用しているので変換するコマンド
----
-    cd shannon_search/tok/static
-    jitter coffee js --bare
-
-
-無料server一覧URL
----
-
-http://freedjangohosting.com/
 
 フォルダ構成
 --
@@ -39,7 +28,7 @@ http://freedjangohosting.com/
 * index.html ローカルでの練習用index.html
 * js JSが格納(ローカルでの練習用index.html用)
 * lib JSのライブラリが格納(ローカルでの練習用index.html用)
-* shannon_search 本体のフォルダ(tokとdekがあるが、tokしか使用していません)
+* shannon_study本体のフォルダ(shannnon_searchとdekがあるが、shannnon_searchしか使用していません) ※参考にしたサイトの名残だったtokは意味がわからない名前なので名前を変更しました
 
 Django (1.3でも動作確認済み)
 ---
@@ -47,9 +36,9 @@ Django (1.3でも動作確認済み)
     hg clone https://bitbucket.org/blaue_fuchs/shannon_search
     pip install Django==1.4.2
 
-起動
+Djangoの起動
 ---
-    python shannon_search/tok/manage.py runserver 8080
+    python shannon_study/shannon_search/manage.py runserver 8080
 
 JSONの仕組み
 ---
@@ -61,13 +50,20 @@ index.htmlテンプレートにて
     pip install south
     pip install simplejson
 
-southでのDB初期化 (直下にdjango.dbがないときはsqlite3のDBが作成されてない)
+southでのDB初期化 (※shannon_searchディレクトリ直下にdjango.dbがないときはsqlite3のDBが作成されてない場合)
 ---
 
-    python shannon_search/tok/manage.py schemamigration tok --initial 
-    python shannon_search/tok/manage.py syncdb --all
+    python shannon_study/shannon_search/manage.py schemamigration shannon_search --initial
+    python shannon_study/shannon_search/manage.py syncdb --all
 
-# 次回
+次回DBを更新時のsouthの処理
+---
 
-    python shannon_search/tok/manage.py migrate
+    python shannon_study/shannon_search/manage.py migrate
+
+その他 無料サーバ一覧URL
+---
+
+http://freedjangohosting.com/
+
 

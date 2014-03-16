@@ -3,7 +3,7 @@ from django.template import RequestContext, Context
 from django.shortcuts import render_to_response
 from django.views.decorators.csrf import csrf_protect
 from django.db import models
-from tok.models import Dictionary
+from shannon_search.models import Dictionary
 
 
 def root(request):
