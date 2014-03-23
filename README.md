@@ -68,6 +68,13 @@ southでのDB初期化 (※shannon_searchディレクトリ直下にdjango.dbが
 
     python shannon_study/shannon_search/manage.py migrate
 
+検索のサンプルInsert
+---
+shannon_search_searchsampleに入っている
+
+    insert into shannon_search_searchsample (key, name) values('中野', '中野郵便局');
+    insert into shannon_search_searchsample (key, name) values('荻窪', 'LUMINE荻窪店');
+
 その他 無料サーバ一覧URL
 ---
 

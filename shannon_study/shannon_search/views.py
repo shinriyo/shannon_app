@@ -4,15 +4,35 @@ from django.shortcuts import render_to_response
 from django.views.decorators.csrf import csrf_protect
 from django.db import models
 from shannon_search.models import Dictionary
+from shannon_search.models import SearchSample
 
 
 def root(request):
     ctxt = RequestContext(request, {})
     return render_to_response("index.html", ctxt)
 
-# TODO:
 def search(request):
-    ctxt = RequestContext(request, {})
+    key = ''
+    result_for_template = []
+
+    if "keyword" in request.POST:
+        keyword = request.POST["keyword"]
+        # 全角も半角もor
+        dst = keyword.replace(u'　', ' ')
+        splited = dst.split(' ')
+        key = "'" + "','".join(splited) + "'"
+        result = SearchSample.objects.extra(
+          where=["key in (" + key + ")"]
+        )
+        if len(result) > 0:
+            for res in result:
+                result_for_template.append(res.name)
+        else:
+            result_for_template.append("no result")
+
+        ctxt = RequestContext(request, {
+            "result": result_for_template,
+        })
     return render_to_response("search.html", ctxt)
 
 def register(request):
@@ -24,9 +44,11 @@ def register_result(request):
     if "keyword" in request.POST:
         keyword = request.POST["keyword"]
 
+        # 全角も半角もor
         dst = keyword.replace(u'　', ' ')
         splited = dst.split(' ')
 
+        # 登録ワードが2つ以上
         if len(splited) >= 2:
             key = splited.pop(0)
 

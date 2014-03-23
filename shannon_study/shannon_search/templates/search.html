@@ -2,20 +2,16 @@
 <html ng-app="SearchApp">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script type="text/javascript" src="/get_json_js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/lib/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}lib/angularjs/angular.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/service/service.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/filter/andSearchFilter.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/controller/controller.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
     <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
     <title>Shannon Lab Search Engine</title>
   </head>
   <body>
     <h1>Shanon Search Engine</h1>
+    {% for x in result %}
+      {{x}}<br />
+    {% endfor %}
+    <a href="/">index</a>
+    <hr />
+    <p>© Shannon Lab 2014.</p>
   </body>
-  TODO: ここに検索結果
-  <hr />
-  <p>© Shannon Lab 2014.</p>
 </html> 
