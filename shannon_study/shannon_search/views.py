@@ -10,8 +10,16 @@ def root(request):
     ctxt = RequestContext(request, {})
     return render_to_response("index.html", ctxt)
 
-
+# TODO:
 def search(request):
+    ctxt = RequestContext(request, {})
+    return render_to_response("search.html", ctxt)
+
+def register(request):
+    ctxt = RequestContext(request, {})
+    return render_to_response("register.html", ctxt)
+
+def register_result(request):
     key = message = ''
     if "keyword" in request.POST:
         keyword = request.POST["keyword"]
@@ -45,7 +53,7 @@ def search(request):
         "key": key,
         "message": message,
     })
-    return render_to_response("search.html", ctxt)
+    return render_to_response("register_result.html", ctxt)
 
 from django.http import HttpResponse
 from simplejson import dumps

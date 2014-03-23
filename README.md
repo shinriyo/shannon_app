@@ -13,7 +13,7 @@ How to use
 
 http://yutarotanaka.com/blog/angularjs-custom-filter/
 
-jitter (CoffeeScriptをJSに自動変換)
+検索システム jitter (CoffeeScriptをJSに自動変換)
 ---
 
     cd shannon_study/shannon_search/static/
@@ -28,7 +28,10 @@ jitter (CoffeeScriptをJSに自動変換)
 * index.html ローカルでの練習用index.html
 * js JSが格納(ローカルでの練習用index.html用)
 * lib JSのライブラリが格納(ローカルでの練習用index.html用)
-* shannon_study本体のフォルダ(shannnon_searchとdekがあるが、shannnon_searchしか使用していません) ※参考にしたサイトの名残だったtokは意味がわからない名前なので名前を変更しました
+* shannon_study本体のフォルダ
+  - shannnon_search 検索システム
+  - ccchart グラフ 
+  ※参考にしたサイトの名残だったtokとdecは意味がわからない名前なので名前を変更しました
 
 Django (1.3でも動作確認済み)
 ---
@@ -36,9 +39,13 @@ Django (1.3でも動作確認済み)
     hg clone https://bitbucket.org/blaue_fuchs/shannon_search
     pip install Django==1.4.2
 
-Djangoの起動
+Djangoの起動(検索システム)
 ---
     python shannon_study/shannon_search/manage.py runserver 8080
+
+Djangoの起動(グラフシステム)
+---
+    python shannon_study/ccchart/manage.py runserver 8080
 
 JSONの仕組み
 ---

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html ng-app="SearchApp">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -14,8 +14,19 @@
   </head>
   <body>
     <h1>Shanon Search Engine</h1>
+    <form method="POST" action="{% url search %}" name="SEARCH">
+      {% csrf_token %}
+      <div ng-controller="SearchController">
+        <input id="inputbox" onfocus="enableSuggestion()" onblur="disableSuggestion()" type="text" name="keyword" ng-model="keyword" placeholder="Keyword" autocomplete="off" />
+        <ul id="suggestion" class="submenu">
+          <li ng-repeat="user in users | andSearchFilter:keyword">
+            <a href onmouseover="go(this)">{$ user.key $} {$ user.name $}</a>
+          </li>
+          </ul>
+      	<input type="submit" value="search" />
+      </div>
+    </form>
   </body>
-  TODO: ここに検索結果
   <hr />
   <p>© Shannon Lab 2014.</p>
-</html> 
+</html>
